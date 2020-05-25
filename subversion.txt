@@ -1,0 +1,5 @@
+#para importar una carpeta al repositorio
+svn import /tmp/project file:///mnt/repositorio -m "initial import"
+
+#para crear una copia del repositorio en local y poder editarlo
+svn checkout file:///mnt/repositorio/trunk project

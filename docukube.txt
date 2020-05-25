@@ -1,0 +1,110 @@
+root@ubuntu:/etc/kubernetes/manifests # kubeadm init --apiserver-advertise-address=192.168.1.60 --service-cidr=10.96.0.0/16
+[init] Using Kubernetes version: v1.10.5
+[init] Using Authorization modes: [Node RBAC]
+[preflight] Running pre-flight checks.
+	[WARNING FileExisting-crictl]: crictl not found in system path
+Suggestion: go get github.com/kubernetes-incubator/cri-tools/cmd/crictl
+[preflight] Starting the kubelet service
+[certificates] Using the existing ca certificate and key.
+[certificates] Using the existing apiserver certificate and key.
+[certificates] Using the existing apiserver-kubelet-client certificate and key.
+[certificates] Using the existing etcd/ca certificate and key.
+[certificates] Using the existing etcd/server certificate and key.
+[certificates] Using the existing etcd/peer certificate and key.
+[certificates] Using the existing etcd/healthcheck-client certificate and key.
+[certificates] Using the existing apiserver-etcd-client certificate and key.
+[certificates] Using the existing sa key.
+[certificates] Using the existing front-proxy-ca certificate and key.
+[certificates] Using the existing front-proxy-client certificate and key.
+[certificates] Valid certificates and keys now exist in "/etc/kubernetes/pki"
+[kubeconfig] Using existing up-to-date KubeConfig file: "/etc/kubernetes/admin.conf"
+[kubeconfig] Using existing up-to-date KubeConfig file: "/etc/kubernetes/kubelet.conf"
+[kubeconfig] Using existing up-to-date KubeConfig file: "/etc/kubernetes/controller-manager.conf"
+[kubeconfig] Using existing up-to-date KubeConfig file: "/etc/kubernetes/scheduler.conf"
+[controlplane] Wrote Static Pod manifest for component kube-apiserver to "/etc/kubernetes/manifests/kube-apiserver.yaml"
+[controlplane] Wrote Static Pod manifest for component kube-controller-manager to "/etc/kubernetes/manifests/kube-controller-manager.yaml"
+[controlplane] Wrote Static Pod manifest for component kube-scheduler to "/etc/kubernetes/manifests/kube-scheduler.yaml"
+[etcd] Wrote Static Pod manifest for a local etcd instance to "/etc/kubernetes/manifests/etcd.yaml"
+[init] Waiting for the kubelet to boot up the control plane as Static Pods from directory "/etc/kubernetes/manifests".
+[init] This might take a minute or longer if the control plane images have to be pulled.
+[apiclient] All control plane components are healthy after 36.014154 seconds
+[uploadconfig] Storing the configuration used in ConfigMap "kubeadm-config" in the "kube-system" Namespace
+[markmaster] Will mark node ubuntu as master by adding a label and a taint
+[markmaster] Master ubuntu tainted and labelled with key/value: node-role.kubernetes.io/master=""
+[bootstraptoken] Using token: b3paly.lexkqr9ivcq2aops
+[bootstraptoken] Configured RBAC rules to allow Node Bootstrap tokens to post CSRs in order for nodes to get long term certificate credentials
+[bootstraptoken] Configured RBAC rules to allow the csrapprover controller automatically approve CSRs from a Node Bootstrap Token
+[bootstraptoken] Configured RBAC rules to allow certificate rotation for all node client certificates in the cluster
+[bootstraptoken] Creating the "cluster-info" ConfigMap in the "kube-public" namespace
+[addons] Applied essential addon: kube-dns
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join 192.168.1.60:6443 --token b3paly.lexkqr9ivcq2aops --discovery-token-ca-cert-hash sha256:41cf65d375d72380791b28d0c457943acf2ce9fe328d170210ee8015d073108c
+
+
+
+
+Crear proxy para que se pueda acceder desde fuera
+
+
+
+kubectl proxy --address 0.0.0.0 --accept-hosts='^*$'
+#####################################################################
+
+
+
+Crear un deployment a partyir de una imagen docker no ejecutar nunca mo root, no funciona
+
+
+eval $(minikube docker-env)
+
+docker build -t nombredelanuevaimagen .
+
+kubectl run hello-node --image=hello-node:v1 --port=8080 --image-pull-policy=Never
+
+Despues de cuatro minutos deja dar el erroro de policy never pulled
+
+Para crear un servicio de ese dployment ejecutamos:
+
+
+kubectl expose deployment hello-node --type=LoadBalancer
+
+
+
+
+
+
+
+
+
+##########################################
+##Para poder acceder a las maquinas internas de la maquina virtual de minikube, habra qu eañadirle  una tarjeta de red a la maquina virtual en adaptador puentye, una vbez hecho eso podremos hacerla ping, para asignarle una ip externa a los servicios habra que ejecutar:
+	 kubectl patch svc node-web --patch '{"spec": {"externalIPs": ["192.168.1.8"]}}'
+Para que responda la maquina habra que ejecutar minikube ssh
+Y ejecutar 
+ sudo ip a a 192.168.1.8 dev lo
+Para que natee la ip de la maquina y le reenvie las peticiones.
+
+
+Ahora tambien podremos hacer ping a esa ip, para cambiar los puertos de los servicios ejecutar el comando
+
+	kubectl edit service
+
+Y se nos habriran los yaml de todos los servicios en una sola página ahi se peuden editar los puertos y la ip.
+
+	

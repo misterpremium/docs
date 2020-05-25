@@ -1,0 +1,250 @@
+Mirar que este definido el repositorio de epel en /etc/yum.repo.d/
+
+
+
+
+
+yum -y install epel-release
+
+===============================================================================================================================================================================================================
+ Package                                                Arquitectura                                     Versión                                        Repositorio                                      Tamaño
+===============================================================================================================================================================================================================
+Instalando:
+ epel-release                                           noarch                                           7-11                                           extras                                            15 k
+
+Resumen de la transacción
+===============================================================================================================================================================================================================
+Instalar  1 Paquete
+
+ yum install https://labs.consol.de/repo/stable/rhel6/i386/labs-consol-stable.rhel6.noarch.rpm
+
+Dependencias resueltas
+
+===============================================================================================================================================================================================================
+ Package                                             Arquitectura                            Versión                                   Repositorio                                                       Tamaño
+===============================================================================================================================================================================================================
+Instalando:
+ labs-consol-stable                                  noarch                                  1.4-1                                     /labs-consol-stable.rhel6.noarch                                   18 k
+
+Resumen de la transacción
+===============================================================================================================================================================================================================
+Instalar  1 Paquete
+
+
+yum install naemon*
+
+Dependencias resueltas
+
+===============================================================================================================================================================================================================
+ Package                                               Arquitectura                     Versión                                Repositorio                                                               Tamaño
+===============================================================================================================================================================================================================
+Instalando:
+ naemon-core                                           x86_64                           1.0.7-0                                /naemon-core-1.0.7.rhel7.x86_64                                           231 k
+ naemon-core-dbg                                       x86_64                           1.0.7-0                                /naemon-core-dbg-1.0.7.rhel7.x86_64                                        28 k
+ naemon-core-debuginfo                                 x86_64                           1.0.7-0                                /naemon-core-debuginfo-1.0.7.rhel7.x86_64                                 429 k
+ naemon-devel                                          x86_64                           1.0.7-0                                /naemon-devel-1.0.7.rhel7.x86_64                                           20 M
+ naemon-livestatus                                     x86_64                           1.0.7-0                                /naemon-livestatus-1.0.7.rhel7.x86_64                                     577 k
+ naemon-livestatus-debuginfo                           x86_64                           1.0.7-0                                /naemon-livestatus-debuginfo-1.0.7.rhel7.x86_64                            12 M
+Instalando para las dependencias:
+ glib2-devel                                           x86_64                           2.54.2-2.el7                           base                                                                      446 k
+ libnaemon                                             x86_64                           1.0.7-0                                labs_consol_stable                                                        213 k
+ pcre-devel                                            x86_64                           8.32-17.el7                            base                                                                      480 k
+
+Resumen de la transacción
+===============================================================================================================================================================================================================
+Instalar  6 Paquetes (+3 Paquetes dependientes)
+
+
+
+ yum install nagios-plugins nagios-plugins-all nagios-plugins-nrpe nrpe
+
+
+
+
+Dependencias resueltas
+
+===============================================================================================================================================================================================================
+ Package                                                  Arquitectura                           Versión                                                         Repositorio                             Tamaño
+===============================================================================================================================================================================================================
+Instalando:
+ nagios-plugins                                           x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                    116 k
+ nagios-plugins-all                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     18 k
+ nagios-plugins-nrpe                                      x86_64                                 3.2.0-6.el7                                                     epel                                     47 k
+ nrpe                                                     x86_64                                 3.2.0-6.el7                                                     epel                                    260 k
+Instalando para las dependencias:
+ autogen-libopts                                          x86_64                                 5.18-5.el7                                                      base                                     66 k
+ avahi-libs                                               x86_64                                 0.6.31-19.el7                                                   base                                     61 k
+ bind-libs                                                x86_64                                 32:9.9.4-61.el7                                                 base                                    1.0 M
+ bind-utils                                               x86_64                                 32:9.9.4-61.el7                                                 base                                    204 k
+ cups-libs                                                x86_64                                 1:1.6.3-35.el7                                                  base                                    357 k
+ fping                                                    x86_64                                 3.10-4.el7                                                      epel                                     46 k
+ libarchive                                               x86_64                                 3.1.2-10.el7_2                                                  base                                    318 k
+ libldb                                                   x86_64                                 1.2.2-1.el7                                                     base                                    131 k
+ libsmbclient                                             x86_64                                 4.7.1-6.el7                                                     base                                    132 k
+ libtalloc                                                x86_64                                 2.1.10-1.el7                                                    base                                     33 k
+ libtdb                                                   x86_64                                 1.3.15-1.el7                                                    base                                     48 k
+ libtevent                                                x86_64                                 0.9.33-2.el7                                                    base                                     37 k
+ libtirpc                                                 x86_64                                 0.2.4-0.10.el7                                                  base                                     88 k
+ libwbclient                                              x86_64                                 4.7.1-6.el7                                                     base                                    107 k
+ lm_sensors                                               x86_64                                 3.4.0-4.20160601gitf9185e5.el7                                  base                                    140 k
+ lm_sensors-libs                                          x86_64                                 3.4.0-4.20160601gitf9185e5.el7                                  base                                     41 k
+ nagios-common                                            x86_64                                 4.3.4-5.el7                                                     epel                                     24 k
+ nagios-plugins-breeze                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     19 k
+ nagios-plugins-by_ssh                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     44 k
+ nagios-plugins-cluster                                   x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     38 k
+ nagios-plugins-dhcp                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     44 k
+ nagios-plugins-dig                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     45 k
+ nagios-plugins-disk                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     46 k
+ nagios-plugins-disk_smb                                  x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     22 k
+ nagios-plugins-dns                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     46 k
+ nagios-plugins-dummy                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     34 k
+ nagios-plugins-file_age                                  x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     20 k
+ nagios-plugins-flexlm                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     20 k
+ nagios-plugins-fping                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     44 k
+ nagios-plugins-game                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     40 k
+ nagios-plugins-hpjd                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     43 k
+ nagios-plugins-http                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     61 k
+ nagios-plugins-icmp                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     50 k
+ nagios-plugins-ide_smart                                 x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     39 k
+ nagios-plugins-ircd                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     21 k
+ nagios-plugins-ldap                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     45 k
+ nagios-plugins-load                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     40 k
+ nagios-plugins-log                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     20 k
+ nagios-plugins-mailq                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     23 k
+ nagios-plugins-mrtg                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     39 k
+ nagios-plugins-mrtgtraf                                  x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     39 k
+ nagios-plugins-mysql                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     51 k
+ nagios-plugins-nagios                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     40 k
+ nagios-plugins-nt                                        x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     45 k
+ nagios-plugins-ntp                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     64 k
+ nagios-plugins-ntp-perl                                  x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     22 k
+ nagios-plugins-nwstat                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     47 k
+ nagios-plugins-oracle                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     20 k
+ nagios-plugins-overcr                                    x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     42 k
+ nagios-plugins-perl                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     19 k
+ nagios-plugins-pgsql                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     43 k
+ nagios-plugins-ping                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     45 k
+ nagios-plugins-procs                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     45 k
+ nagios-plugins-real                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     41 k
+ nagios-plugins-rpc                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     21 k
+ nagios-plugins-sensors                                   x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     18 k
+ nagios-plugins-smtp                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     48 k
+ nagios-plugins-snmp                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     49 k
+ nagios-plugins-ssh                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     40 k
+ nagios-plugins-swap                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     39 k
+ nagios-plugins-tcp                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     48 k
+ nagios-plugins-time                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     41 k
+ nagios-plugins-ups                                       x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     43 k
+ nagios-plugins-users                                     x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     37 k
+ nagios-plugins-wave                                      x86_64                                 2.2.1-9git5c7eb5b9.el7                                          epel                                     19 k
+ net-snmp-libs                                            x86_64                                 1:5.7.2-33.el7_5.2                                              updates                                 749 k
+ net-snmp-utils                                           x86_64                                 1:5.7.2-33.el7_5.2                                              updates                                 198 k
+ ntp                                                      x86_64                                 4.2.6p5-28.el7.centos                                           base                                    549 k
+ ntpdate                                                  x86_64                                 4.2.6p5-28.el7.centos                                           base                                     86 k
+ perl                                                     x86_64                                 4:5.16.3-292.el7                                                base                                    8.0 M
+ perl-Carp                                                noarch                                 1.26-244.el7                                                    base                                     19 k
+ perl-Encode                                              x86_64                                 2.51-7.el7                                                      base                                    1.5 M
+ perl-Exporter                                            noarch                                 5.68-3.el7                                                      base                                     28 k
+ perl-File-Path                                           noarch                                 2.09-2.el7                                                      base                                     26 k
+ perl-File-Temp                                           noarch                                 0.23.01-3.el7                                                   base                                     56 k
+ perl-Filter                                              x86_64                                 1.49-3.el7                                                      base                                     76 k
+ perl-Getopt-Long                                         noarch                                 2.40-3.el7                                                      base                                     56 k
+ perl-HTTP-Tiny                                           noarch                                 0.033-3.el7                                                     base                                     38 k
+ perl-PathTools                                           x86_64                                 3.40-5.el7                                                      base                                     82 k
+ perl-Pod-Escapes                                         noarch                                 1:1.04-292.el7                                                  base                                     51 k
+ perl-Pod-Perldoc                                         noarch                                 3.20-4.el7                                                      base                                     87 k
+ perl-Pod-Simple                                          noarch                                 1:3.28-4.el7                                                    base                                    216 k
+ perl-Pod-Usage                                           noarch                                 1.63-3.el7                                                      base                                     27 k
+ perl-Scalar-List-Utils                                   x86_64                                 1.27-248.el7                                                    base                                     36 k
+ perl-Socket                                              x86_64                                 2.010-4.el7                                                     base                                     49 k
+ perl-Storable                                            x86_64                                 2.45-3.el7                                                      base                                     77 k
+ perl-Text-ParseWords                                     noarch                                 3.29-4.el7                                                      base                                     14 k
+ perl-Time-HiRes                                          x86_64                                 4:1.9725-3.el7                                                  base                                     45 k
+ perl-Time-Local                                          noarch                                 1.2300-2.el7                                                    base                                     24 k
+ perl-constant                                            noarch                                 1.27-2.el7                                                      base                                     19 k
+ perl-libs                                                x86_64                                 4:5.16.3-292.el7                                                base                                    688 k
+ perl-macros                                              x86_64                                 4:5.16.3-292.el7                                                base                                     43 k
+ perl-parent                                              noarch                                 1:0.225-244.el7                                                 base                                     12 k
+ perl-podlators                                           noarch                                 2.5.1-3.el7                                                     base                                    112 k
+ perl-threads                                             x86_64                                 1.87-4.el7                                                      base                                     49 k
+ perl-threads-shared                                      x86_64                                 1.43-6.el7                                                      base                                     39 k
+ postgresql-libs                                          x86_64                                 9.2.23-3.el7_4                                                  base                                    234 k
+ qstat                                                    x86_64                                 2.11-13.20080912svn311.el7                                      epel                                    167 k
+ rpcbind                                                  x86_64                                 0.2.0-44.el7                                                    base                                     59 k
+ samba-client                                             x86_64                                 4.7.1-6.el7                                                     base                                    608 k
+ samba-client-libs                                        x86_64                                 4.7.1-6.el7                                                     base                                    4.8 M
+ samba-common                                             noarch                                 4.7.1-6.el7                                                     base                                    205 k
+ samba-common-libs                                        x86_64                                 4.7.1-6.el7                                                     base                                    162 k
+
+Resumen de la transacción
+===============================================================================================================================================================================================================
+Instalar  4 Paquetes (+103 Paquetes dependientes)
+
+yum install naemon-thruk
+
+
+==============================================================================================================================================================================================================
+ Package                                                 Arquitectura                           Versión                                               Repositorio                                        Tamaño
+===============================================================================================================================================================================================================
+Instalando:
+ naemon-thruk                                            noarch                                 1.0.7-0                                               labs_consol_stable                                 5.1 k
+Instalando para las dependencias:
+ apr                                                     x86_64                                 1.4.8-3.el7_4.1                                       base                                               103 k
+ apr-util                                                x86_64                                 1.5.2-6.el7                                           base                                                92 k
+ fontconfig                                              x86_64                                 2.10.95-11.el7                                        base                                               229 k
+ fontpackages-filesystem                                 noarch                                 1.44-8.el7                                            base                                               9.9 k
+ gd                                                      x86_64                                 2.0.35-26.el7                                         base                                               146 k
+ httpd                                                   x86_64                                 2.4.6-80.el7.centos                                   base                                               2.7 M
+ httpd-tools                                             x86_64                                 2.4.6-80.el7.centos                                   base                                                89 k
+ libX11                                                  x86_64                                 1.6.5-1.el7                                           base                                               606 k
+ libX11-common                                           noarch                                 1.6.5-1.el7                                           base                                               164 k
+ libXau                                                  x86_64                                 1.0.8-2.1.el7                                         base                                                29 k
+ libXpm                                                  x86_64                                 3.5.12-1.el7                                          base                                                55 k
+ libjpeg-turbo                                           x86_64                                 1.2.90-5.el7                                          base                                               134 k
+ libpng                                                  x86_64                                 2:1.5.13-7.el7_2                                      base                                               213 k
+ libthruk                                                x86_64                                 2.20-1.el6                                            labs_consol_stable                                 4.8 M
+ libxcb                                                  x86_64                                 1.12-1.el7                                            base                                               211 k
+ lyx-fonts                                               noarch                                 2.2.3-1.el7                                           epel                                               159 k
+ mailcap                                                 noarch                                 2.1.41-2.el7                                          base                                                31 k
+ mod_fcgid                                               x86_64                                 2.3.9-4.el7_4.1                                       base                                                79 k
+ thruk                                                   x86_64                                 2.20-2                                                labs_consol_stable                                 2.6 k
+ thruk-base                                              x86_64                                 2.20-2                                                labs_consol_stable                                 5.7 M
+ thruk-plugin-reporting                                  x86_64                                 2.20-2                                                labs_consol_stable                                  20 M
+
+Resumen de la transacción
+===========================================================================================
+Instalar  1 Paquete (+21 Paquetes dependientes)
+
+
+
+Deshabilitamos el firewall y alñádimos al arranque aurtomatico los servicios
+
+	service iptables stop
+	chkconfig httpd on && service httpd start
+	chkconfig naemon on && service naemon start
+	chkconfig thruk on && service thruk start
+
+
+
+Instalar las librerias 64 de mod gearman y gearman desde el repositorio
+
+
+================================================================================  
+Package       Arquitectura                       Versión Repositorio                                 Tamaño 
+================================================================================
+ Instalando:  lib64gearman6 x86_64 0.22-1  /lib64gearman6-0.22-1-rosa.lts2012.0.x86_64 121 k 
+Resumen de la transacción 
+ ================================================================================
+ Instalar  1 Paquete
+
+
+
+instalamos el rpm descargado de mod_gearman
+
+
+================================================================================ 
+ Package     Arquitectura                     Versión             Repositorio                       Tamaño  
+================================================================================
+ Instalando:  mod_gearman x86_64 3.0.0-1.el7.centos  /mod_gearman-3.0.0-1.rhel7.x86_64 2.0 M  
+ ================================================================================
+ Resumen de la transacción Instalar  1 Paquete

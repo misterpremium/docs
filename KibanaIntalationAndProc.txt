@@ -1,0 +1,40 @@
+Install elasticsearch from http://raspberrypidpm2.ddns.net/docu/debs/Ubuntu
+the packages named elasticsearch-6.4.2.tar.gz kibana-6.4.2-amd64.deb apm-server-6.4.2-amd64.deb
+
+
+
+Whith that packages we going to install the elasticsearch, kibana and the apm server to monitor the aplications
+
+
+Start elasticsearch
+mv elasticsearch-6.4.2.tar.gz /opt
+cd /opt
+tar -xvf elasticsearch-6.4.2.tar.gz
+rm elasticsearch-6.4.2.tar.gz
+cd elasticsearch/bin
+nohup ./elasticsearch &
+
+
+
+Install Kibana
+
+sudo dpkg -i kibana-6.4.2-amd64.deb
+
+Configure kibana, the file is by default on /etc/kibana, and is named kibana.yml
+cd /etc/kibana
+
+Start Kibana
+
+sudo /etc/init.d/kibana start
+
+Install apm-server
+
+sudo dpkg -i apm-server-6.4.2-amd64.deb
+
+Configure apm-sever, the file is on /etc/apm-server path
+cd /etc/apm-server
+
+Start apm-server
+
+/etc/init.d/apm-server start
+

@@ -1,0 +1,6 @@
+#Fromateamos la particion del dispositivo a vfat
+mkfs.vfat /dev/sdb1
+#montamos el dispositivo formateado como vfat en una ruta y le indicamos que sea vfat y que sea de lectura y escritura
+sudo mount /dev/sdb1 /mnt/disk -t vfat -o rw
+#ahora montamos la iso en el sistema de archivos montado como vfat
+sudo mount -t vfat -o loop /mnt/sd/backup.iso /mnt/disk

@@ -1,0 +1,1 @@
+sudo mount.cifs //25.81.167.193/disco /mnt/disco -o user=pe

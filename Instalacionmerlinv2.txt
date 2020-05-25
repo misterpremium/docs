@@ -1,0 +1,358 @@
+Instalación de merlin 
+
+Merlin es un sistema de alta disponibilidad, con él se crea un cluster, puede ser activo-activo o activo-pasivo. --> Hacer una descripción de que es y para qué sirve Merlin 
+
+  
+
+  
+
+Para instalar merlin habrá de ser compilado ya que no existen paquetes precompilados por la comunidad. 
+
+  
+
+  
+
+  
+
+Para ello descargamos del repositorio de git el source   https://github.com/op5/merlin.git --> Inclurir Url de descarga 
+
+  
+
+  
+
+Nos conectamos a la máquina de compilación para compilar el programa. --> ¿Que maquina es? que Ip? porque se llama maquina compilacion? 
+
+  
+
+  
+
+Los paquetes necesarios para la compilación son: git gcc autoconf  automake glib-2-devel check-devel libdbi-devel libtool naemon-devel gperf --> ¿Son necesarios para que? ¿para merlin? 
+
+  
+En mi caso algunos de estos paquetes ya estaban instalados.
+  
+
+============================================================================================================================================ 
+
+Package                          Arquitectura                   Versión                                 Repositorio                  Tamaño 
+
+============================================================================================================================================ 
+
+Instalando: 
+
+autoconf                         noarch                         2.69-11.el7                             base                         701 k 
+
+Instalando para las dependencias: 
+
+m4                               x86_64                         1.4.16-10.el7                           base                         256 k 
+
+  
+
+Resumen de la transacción 
+
+============================================================================================================================================ 
+
+Instalar  1 Paquete (+1 Paquete dependiente) 
+
+  
+
+  
+
+============================================================================================================================================ 
+
+Package                              Arquitectura                 Versión                                 Repositorio                Tamaño 
+
+============================================================================================================================================ 
+
+Instalando: 
+
+gcc                                  x86_64                       4.8.5-28.el7                            base                        16 M 
+
+Instalando para las dependencias: 
+
+cpp                                  x86_64                       4.8.5-28.el7                            base                       5.9 M 
+
+glibc-devel                          x86_64                       2.17-222.el7                            base                       1.1 M 
+
+glibc-headers                        x86_64                       2.17-222.el7                            base                       678 k 
+
+kernel-headers                       x86_64                       3.10.0-862.el7                          base                       7.1 M 
+
+libmpc                               x86_64                       1.0.1-3.el7                             base                        51 k 
+
+mpfr                                 x86_64                       3.1.1-4.el7                             base                       203 k 
+
+  
+
+Resumen de la transacción 
+
+============================================================================================================================================ 
+
+Instalar  1 Paquete (+6 Paquetes dependientes) 
+
+  
+
+  
+
+  
+
+  
+
+============================================================================================================================================ 
+
+Package                            Arquitectura                 Versión                              Repositorio                     Tamaño 
+
+============================================================================================================================================ 
+
+Instalando: 
+
+naemon-devel                       x86_64                       1.0.7-0                              Nagios_v7                       2.1 M 
+
+Instalando para las dependencias: 
+
+glib2-devel                        x86_64                       2.54.2-2.el7                         Cluster                         446 k 
+
+pcre-devel                         x86_64                       8.32-17.el7                          Cluster                         480 k 
+
+  
+
+Resumen de la transacción 
+
+============================================================================================================================================ 
+
+Instalar  1 Paquete (+2 Paquetes dependientes) 
+
+
+
+============================================================================================================================================
+ Package                        Arquitectura                    Versión                                 Repositorio                   Tamaño
+============================================================================================================================================
+Instalando:
+ gperf                          x86_64                          3.0.4-8.el7                             base                          303 k
+
+Resumen de la transacción
+============================================================================================================================================
+Instalar  1 Paquete
+
+  
+
+Las daemon devels son necesarias también para su funcionamiento. --> ¿Cuales son las daemon devels? 
+
+  
+
+  
+
+Habrá que instalar una base de datos para poder instalar el servicio ya que merlin está pensado para trabajar con una base de datos, una vez instalado se podrá desinstalar la base de datos, porque no es necesaria para su funcionamiento. --> 
+
+¿Que sentido tiene la instalacion de una bbdd? ¿cual se instala? ¿se instala en la maquina de compilacion que dices? 
+
+  
+
+  
+
+para compilarlo ejecutamos 
+
+autoconf #se ejecuta para genera el configure 
+
+./configure --disable-libdbi   # este programa configura las rutas en las que va a desplegar la aplicacion asi como la exitencia de las librerias necesarias para el fincionamiento de la aplicación, este stript es auto generado por el autoconf a parte del fichero configure.ac, en el cual hay una serie de variables. El escript confiigure tiene una serie de fracmentos en los que contiene partes de si mismo como traza de lo que ha ejecutado el autoconf. En el escript tiene unos ifs para comprobar se el usuario a introducido o no parametros y si no lo ha hecho pone los valores por defecto, este escript genera el Makefile.in, que es el codigo fuente de la aplicacion que sera compilado 
+
+ 
+
+
+
+ 
+
+make  
+
+ 
+
+A partir de este paso se ejecuta en la máquina que tenga el naemon, estos pasos los relaizaremos en tododos los naemons pertenecientes al cluster --> Si se ha de pasar a ejecutar en el nodo que tenga naemon, no es para cluster? no sera que se ejecuta en uno de los dos nodos? 
+
+Si se tiene una maquina de compilacion y se supone que no debe haber ciertos parquetes en nodos de pro, pq se ejecuta un make?. es contradictorio. 
+
+  
+
+make install  
+
+#en este paso puede dar errores al buscar los .sql, si es el caso habrá que crear la ruta que nos diga el error, en mi caso /usr/local/share/merlin/ 
+
+y copiar la carpeta sql que esta en /tmp/merlin 
+El error que da es el soguiente:
+
+ERROR 1049 (42000): Unknown database 'merlin'
+install-merlin.sh: línea 45: /usr/local/share/merlin/sql/mysql/merlin.sql: No existe el fichero o el directorio
+
+--> ¿Porque puede dar errores?, pq los busca? donde se modifica la ruta?. entiendo que el sql o la bbdd esta instalada en el nodo del naemon,correcto? 
+
+  
+
+cp -r /tmp/merlin/sql /usr/local/share/merlin 
+
+  
+
+  
+
+  
+
+Una vez instalado deberemos configurar el servicio, para ello vamos a /usr/local/etc/merlin y editamos el fichero merlin.conf 
+
+  
+
+  
+
+importante poner la opción enable = no en el apartado de database y revisar que las rutas a los logs estén correctas. --> ¿que rutas? 
+
+  
+
+y añadir el peer para indicar cual es el otro miembro del cluster 
+
+  
+
+        En chuwi  
+
+                 peer tarfull { 
+
+                  address = 192.168.1.2; 
+
+                  port = 15551; 
+
+                 } 
+
+        En tarfful 
+
+                 peer chuwi { 
+
+                  address = 192.168.1.3; 
+
+                  port = 15551; 
+
+                 } 
+
+  
+
+  
+
+Mover el .service de /tmp/merlin a /usr/lib/systemd/system , este .service viene con la descarga del git oficial de merlin --> ¿cuando se ha generado? ¿Quien lo ha generado? 
+
+Contenido del merlind.service
+###########################
+[Unit]
+Description=Merlin
+After=syslog.target network.target mariadb.service
+
+[Service]
+#Starting the merlind with --debug option won't daemonize it.
+#By doing this we leverage the rhel7 systemd unit file structure.
+ExecStart=/usr/bin/merlind --config /opt/monitor/op5/merlin/merlin.conf --debug
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+  
+#################################################################
+  
+
+Hay que cambiar el owner al directorio /usr/local/var/lib/merlin a naemon:naemon para que pueda escribir ahí el .sock, por defecto tienen el owner root, por lo que no puede escribir.
+
+El error que sueltan los logs cuiando arrancas es:
+
+[1532079868] 6: Initializing IPC socket '/usr/local/var/lib/merlin/ipc.sock' for daemon
+[1532079868] 3: Failed to bind ipc socket 5 to path '/usr/local/var/lib/merlin/ipc.sock' with len 52: Permission denied
+
+
+--> ¿a que propietario 
+
+se ha de poner? poque no se crea el usuario que sea y se compila y ejecuta con xdicho usuario en el /tmp? 
+
+  
+
+  
+
+Y habilitar el servicio. 
+
+        systemctl enable merlind --> ¿no sera el paso siguiente anterior a este? 
+
+  
+
+mover el merlin.cfg que está en /etc/naemon a la carpeta module-conf.d --> ¿seguro? no sera /etc/naemon/module-conf.d 
+
+  
+
+  
+
+Por último, recargar la configuración de naemon e iniciar el servicio merlin --> Eim? redacctar esto de nuevo, si esta habilitado anteriormente, que servicios habilitos, que servicios arrando? 
+
+  
+
+        systemctl reload naemon 
+
+        systemctl start merlind 
+
+  
+
+Rutas 
+
+        /usr/local/etc/logrotate.d/merlin 
+
+        /usr/local/etc/merlin 
+
+        /usr/local/etc/sudoers.d/merlin 
+
+        /usr/local/lib/merlin 
+
+        /usr/local/share/merlin 
+
+        /usr/local/var/lib/merlin 
+
+        /usr/local/var/log/merlin 
+
+        /usr/local/var/run/merlin 
+
+        /usr/local/var/cache/merlin 
+
+ ISSUES 
+
+ 
+
+ 
+
+Si los nodos no sincronizan habrá que hacerlo de forma manual, para ello habrá que hacer lo siguiente: 
+
+    -Parar el naemon y el merlin 
+
+    -Dejar las configuraciones idénticas en ambos nodos, copiamos lo de uno al otro 
+
+    -Ponemos la misma hora en los dos nodos 
+
+    -Copiar el fichero /var/lib/naemon/retention.dat de una maquina a otra 
+
+    -Iniciar tanto el naemon como el merlin a la vez en ambas máquinas 
+
+        systemctl start naemon && systemctl start merlind 
+
+FALTA: 
+
+  
+
+Ruta de ubicacion de los ficheros de merlin.         /usr/local/etc/merlin 
+
+
+Nombre de scripts importantes si los hay. 
+
+Se configura el rotado de los logs?         /usr/local/etc/logrotate.d/merlin 
+
+
+¿donde deja los logs?           /usr/local/var/log/merlin 
+
+
+¿cuales son los comandos de configuracion o de monitoriacion del estado del cluster? 
+
+  
+
+  
+
+  
+
+  
+
+ 

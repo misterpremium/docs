@@ -1,0 +1,5 @@
+Para poder compartir una ruta con samaba en ubuntu es necesario darle contrasña de samba a un usuario:
+
+sudo smbpasswd -a servePara poder compartir una ruta con samaba en ubuntu es necesario darle contrasña de samba a un usuario:
+
+sudo smbpasswd -a usuario

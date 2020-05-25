@@ -1,0 +1,5 @@
+Hacer backup de la carpeta menu de inicio 
+C:\ProgramData\Microsoft\Windows\Start Menu
+
+
+Y del home del usurio

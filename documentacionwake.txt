@@ -1,0 +1,14 @@
+udo apt-get install wakeonlan
+Para usarlo ni siquiera requieres privilegios de administración. Con este comando enviamos el paquete mágico a una dirección MAC específica.
+
+    wakeonlan 01:02:03:04:05:06
+También es posible hacerlo con grupos de direcciones MAC.
+
+    wakeonlan 01:02:03:04:05:06 01:02:03:04:05:07
+O bien a una subred específica.
+
+    wakeonlan -i 192.168.1.255 01:02:03:04:05:06
+Y si eres sysadmin de un laboratorio con decenas de ordenadores, lo mejor será que tengas todas las MAC en un archivo de texto.
+
+    wakeonlan -f macs.txt
+Para recolectar direcciones MAC, te recomiendo usar nast o arp desde la línea de comandos. El comando wakeonlan es sencillo y, créeme (lo digo por experiencia), muy efectivo.

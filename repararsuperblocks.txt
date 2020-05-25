@@ -1,0 +1,8 @@
+can't read superblock on /dev/sda6.
+
+
+para reparalo ejecutar fsck en la particion dañada
+
+ej
+
+fsck /dev/sda66

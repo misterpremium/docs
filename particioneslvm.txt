@@ -1,0 +1,6 @@
+aumentar el tama´ño del cntenedorlvextend -L10G /dev/mapper/rhelah_master1-root
+aumentar el tamaño del sistema de archivos xfs    xfs_growfs /dev/mapper/rhelah_master1-root
+ver el tipoo de los discos  df -Th
+ver el arbol de las particiones  lsblk
+ver el phisical volume  pvs
+
