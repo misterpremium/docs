@@ -1,0 +1,5 @@
+Refresh key
+gpg  --keyserver hkp://pool.sks-keyservers.net --recv-keys 4773BD5E130D1D45
+
+Install app
+yay -S spotify
