@@ -1,0 +1,5 @@
+Install dependences first
+yay -S hwids karchive kauth procps-ng qt5-charts qt5-quickcontrols2 qt5-svg qt5-xmlpatterns botan qt5-base extra-cmake-modules karchive qt5-tools cmake gcc mesa-demos util-linux vulkan-tools 
+
+Insatall corectrl
+yay -S corectrl
